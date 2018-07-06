@@ -71,3 +71,8 @@ button:hover {
 	color: white;
 	background: steelblue;
 }
+
+.inner-outline:hover {
+	outline: 5px solid white;
+	outline-offset: -5px;
+}
