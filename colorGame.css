@@ -7,55 +7,46 @@ body {
 	font-family: "montserrat", "avenir";
 }
 
-.square {
-	width: 30%;
-	background: purple;
-	padding-bottom: 30%;
-	float: left;
-	margin: 1.66%;
-	border-radius: 15%;
-	transition: background 0.5s;
-	--webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-}
 
-#container {
-	margin: 20px auto;
+/* ==LAYOUT== */
+.container {
 	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-h1 {
+
+/* ==BANNER== */
+.banner {}
+.banner__wrap {
+	background: steelblue;
+}
+.banner__title {
 	text-align: center;
 	line-height: 1.1;
 	color: white;
-	background: steelblue;
 	margin: 0;
 	font-weight: normal;
 	text-transform: uppercase;
 	padding: 20px 0;
 }
 
-#colorDisplay {
+.banner__display {
 	font-size: 200%;
 }
 
-#message {
-	display: inline-block;
-	width: 20%;
-}
-#stripe {
-	background: white;
+
+/* ==MENU== */
+.menu {
 	height: 30px;
 	text-align: center;
 	color: black;
 }
-
-.selected {
-	color: white;
-	background: steelblue;
+.menu__wrap {
+	background: white;
+	margin-bottom: 20px;
 }
-
-button {
+.menu__btn {
 	border: none;
 	background: none;
 	text-transform: uppercase;
@@ -68,13 +59,48 @@ button {
 	--webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	outline: none;
+	cursor: pointer;
 }
-
-button:hover {
+.menu__btn:hover {
 	color: white;
 	background: steelblue;
 }
+.menu__btn--reset {}
+.menu__btn--mode {}
+.menu__btn--selected {
+	color: white;
+	background: steelblue;
+}
+.menu__msg {
+	display: inline-block;
+	width: 20%;
+}
+.menu__btn:hover ~ .menu__btn--mode.menu__btn--selected {
+	background: white;
+	color: steelblue;
+}
 
-.inner-outline:hover {
+/* ==MAIN== */
+.main {}
+.main__wrap {}
+
+
+/* ==SQUARE== */
+.square {
+	width: 30%;
+	background: purple;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+	border-radius: 15%;
+	transition: border-color .125s, background 0.5s;
+	--webkit-transition: border-color .125s, background 0.5s;
+	-moz-transition: border-color .125s, background 0.5s;
+	border: 5px solid transparent;
+	cursor: pointer;
+}
+
+.square:hover {
+	border-color: white;
 
 }
