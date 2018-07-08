@@ -2,29 +2,49 @@
 <html>
 <head>
 	<title>Color Game</title>
-	<link rel="stylesheet" type="text/css" href="/colorGame.css">
+	<link rel="stylesheet" type="text/css" href="colorGame.css">
 </head>
 <body>
-	<h1>The Great 
-		<br>
-		<span id="colorDisplay">RGB</span> 
-		<br>
-		Color Game</h1>
 
-	<div id="stripe">
+	<div id="bannerWrap" class="banner__wrap">
+		<header class="banner container">
+			<h1 class="banner__title">The Great <br>
+				<span id="colorDisplay" class="banner__display">RGB</span><br>
+				Color Game
+			</h1>
+		</header>
+	</div>
+	
+	<div class="menu__wrap">
+		<nav class="menu container">
+			<button id="reset" class="menu__btn menu__btn--reset">New Color</button>
+			<span id="message" class="menu__msg"></span>
+			<button class="menu__btn menu__btn--mode" data-difficulty="3">Easy</button>
+			<button class="menu__btn menu__btn--mode" data-difficulty="6">Medium</button>
+			<button class="menu__btn menu__btn--mode menu__btn--selected" data-difficulty="9">Hard</button>
+		</nav>
+
+	</div>
+	<!-- <div id="stripe">
 		<button id="reset">New Colors</button>
 		<span id="message"></span>
 		<button class="mode">Easy</button>
 		<button class="mode selected">Hard</button>
+	</div> -->
+
+	<div class="main__wrap">
+		<main class="main container">
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+		</main>
 	</div>
-	<div id="container">
-		<div class="square inner-outline"></div>
-		<div class="square inner-outline"></div>
-		<div class="square inner-outline"></div>
-		<div class="square inner-outline"></div>
-		<div class="square inner-outline"></div>
-		<div class="square inner-outline"></div>
-	</div>
-<script type="text/javascript" src="/colorGame.js"></script>
+<script type="text/javascript" src="colorGame.js"></script>
 </body>
 </html>

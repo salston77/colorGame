@@ -1,12 +1,14 @@
-var numSquares = 6;
+var numSquares = 9;
 var colors = [];
 var pickedColor;
-var squares = document.querySelectorAll(".square");
+
 var colorDisplay = document.getElementById("colorDisplay");
-var messageDisplay = document.querySelector("#message");
-var h1 = document.querySelector("h1");
-var resetButton = document.querySelector("#reset");
-var modeButtons = document.querySelectorAll(".mode");
+var messageDisplay = document.getElementById("message");
+var resetButton = document.getElementById("reset");
+var bannerWrap = document.getElementById("bannerWrap")
+
+var modeButtons = document.querySelectorAll(".menu__btn--mode");
+var squares = document.querySelectorAll(".square");
 
 
 init();
@@ -20,10 +22,25 @@ init();
 	function setUpModeButtons() {
 		for(var i = 0; i < modeButtons.length; i++) {
 			modeButtons[i].addEventListener("click", function(){
-				modeButtons[0].classList.remove("selected");
-				modeButtons[1].classList.remove("selected");
-				this.classList.add("selected");
-				this.textContent === "Easy" ? numSquares = 3: numSquares = 6;				
+				modeButtons[0].classList.remove("menu__btn--selected");
+				modeButtons[1].classList.remove("menu__btn--selected");
+				modeButtons[2].classList.remove("menu__btn--selected");
+				this.classList.add("menu__btn--selected");
+
+				console.dir(this);
+				numSquares = this.dataset.difficulty;
+
+				// if(this.textContent === "Easy")	{
+				// 	numSquares = 3;
+				// } else if(this.textContent === "Medium") {
+				// 	numSquares = 6;
+				// } else if(this.textContent === "Hard") {
+				// 	numSquares = 9;
+				// } else {
+				// 	alert("numSquares not defined!!!");
+				// }
+
+								
 				reset();
 			});
 		}
@@ -40,7 +57,7 @@ init();
 						messageDisplay.textContent = "Correct!";
 						resetButton.textContent = "Play Again?";
 						changeColors(clickedColor);
-						h1.style.backgroundColor = clickedColor;
+						bannerWrap.style.backgroundColor = clickedColor;
 					} else {
 						this.style.backgroundColor = "#232323";
 						messageDisplay.textContent = "Try Again";
@@ -69,7 +86,7 @@ init();
 			}
 		}
 			
-		h1.style.backgroundColor = "steelblue";
+		bannerWrap.style.backgroundColor = "steelblue";
 	}
 
 	resetButton.addEventListener("click", function(){
@@ -111,5 +128,3 @@ init();
 	
 		 return "rgb(" + r + ", " + g + ", " + b + ")";
 	}
-
-	
